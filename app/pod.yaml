@@ -7,6 +7,8 @@ spec:
   containers:
   - name: alpine
     image: alpine:latest
+    command: [sh, -c]
+    args: "sleep 36000"
     volumeMounts:
     - name: srt
       mountPath: "/srt"
