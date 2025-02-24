@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod
+  namespace: argo-test
+spec:
+  containers:
+  - name: alpine
+    image: alpine:latest
+    volumeMounts:
+    - name: srt
+      mountPath: "/srt"
+      readOnly: true
+  volumes:
+  - name: srt
+    secret:
+      secretName: secret
